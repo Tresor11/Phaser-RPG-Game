@@ -1,0 +1,57 @@
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-line-pack: distribute;
+      align-content: space-around;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.418);
+}
+
+#learder {
+  width: 400px;
+  height: 600px;
+  text-align: center;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  background-color: rgba(0, 0, 0, 0.911);
+}
+
+#user-name {
+  background-color: rgba(0, 0, 0, 0.699);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#user-name form {
+  margin-top: 40vh;
+  margin-left: 35vw;
+}
+
+.text-c {
+  text-align: center;
+}
+
+#learder h1 {
+  color: whitesmoke;
+}
+
+#learder h4 {
+  width: 100%;
+  border-bottom: 1px solid #5e5e5e;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  color: whitesmoke;
+}
+
+#learder h4 span {
+  width: 30%;
+  background-color: rgba(255, 255, 255, 0.247);
+}
+/*# sourceMappingURL=style.css.map */
