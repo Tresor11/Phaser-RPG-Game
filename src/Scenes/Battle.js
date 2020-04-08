@@ -1,6 +1,13 @@
+/* eslint-disable no-multi-assign */
+/* eslint-disable prefer-destructuring */
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-undef */
 /* eslint-disable no-plusplus */
+import {
+  damge, scoreUpdate, powerAssign, enemySelect,
+} from './helper';
+
 const BattleScene = new Phaser.Class({
   Extends: Phaser.Scene,
   initialize: function BattleScene() {
@@ -19,11 +26,11 @@ const BattleScene = new Phaser.Class({
       this,
       500,
       150,
-      'player',
-      1,
-      'Warrior',
-      100,
-      200,
+      'hero1',
+      null,
+      'Ninja',
+      150,
+      80,
     );
     this.add.existing(warrior);
 
@@ -31,12 +38,12 @@ const BattleScene = new Phaser.Class({
     const mage = new PlayerCharacter(
       this,
       500,
+      300,
+      'hero2',
+      null,
+      'Herus',
       200,
-      'player',
-      4,
-      'Mage',
-      80,
-      800,
+      50,
     );
     this.add.existing(mage);
 
@@ -44,23 +51,21 @@ const BattleScene = new Phaser.Class({
       this,
       250,
       150,
-      'dragonblue',
-      null,
-      'Dragon',
-      50,
-      100,
+      'bandit',
+      Phaser.Math.RND.between(0, 2),
+      'drangon',
+      200,
     );
     this.add.existing(dragonblue);
 
     const dragonOrange = new Enemy(
       this,
       250,
+      300,
+      'bandit',
+      Phaser.Math.RND.between(0, 2),
+      'bandit',
       200,
-      'dragonorrange',
-      null,
-      'Dragon2',
-      50,
-      100,
     );
     this.add.existing(dragonOrange);
 
@@ -78,10 +83,11 @@ const BattleScene = new Phaser.Class({
   nextTurn() {
     // if we have victory or game over
     if (this.checkEndBattle() === 'Vitory') {
-      score += 20;
+      score += scoreUpdate(score);
       this.endBattle();
       return;
-    } if (this.checkEndBattle() === 'GameOver') {
+    }
+    if (this.checkEndBattle() === 'GameOver') {
       this.endBattle(true);
       return;
     }
@@ -129,7 +135,8 @@ const BattleScene = new Phaser.Class({
 
     if (victory) {
       return 'Vitory';
-    } if (gameOver) {
+    }
+    if (gameOver) {
       return 'GameOver';
     }
   },
@@ -157,7 +164,7 @@ const BattleScene = new Phaser.Class({
     // sleep the UI
     if (param) {
       this.scene.sleep('UIScene');
-      // return to WorldScene and sleep current BattleScene
+      location.reload(true);
       this.scene.switch('Credits');
     } else {
       this.scene.sleep('UIScene');
@@ -166,14 +173,7 @@ const BattleScene = new Phaser.Class({
     }
   },
 });
-
 let score = 0;
-const scoreUpdate = (el) => {
-  setInterval(() => {
-    el.setText(`Score: ${score}`);
-  }, 500);
-};
-
 // base class for heroes and enemies
 const Unit = new Phaser.Class({
   Extends: Phaser.GameObjects.Sprite,
@@ -196,12 +196,7 @@ const Unit = new Phaser.Class({
       target.takeDamage(this.damage);
       this.scene.events.emit(
         'Message',
-        `${this.type
-        } attacks ${
-          target.type
-        } for ${
-          this.damage
-        } damage`,
+        `${this.type} attacks ${target.type} for ${this.damage} damage`,
       );
     }
   },
@@ -221,6 +216,10 @@ let Enemy = new Phaser.Class({
   Extends: Unit,
 
   initialize: function Enemy(scene, x, y, texture, frame, type, hp, damage) {
+    texture = enemySelect(score);
+    type = texture;
+    hp = powerAssign(type)[0];
+    damage = powerAssign(type)[1];
     Unit.call(this, scene, x, y, texture, frame, type, hp, damage);
   },
 });
@@ -396,19 +395,19 @@ const UIScene = new Phaser.Class({
     this.graphics = this.add.graphics();
     this.graphics.lineStyle(1, 0xffffff);
     this.graphics.fillStyle(0x031f4c, 1);
-    this.graphics.strokeRect(200, 300, 100, 100);
-    this.graphics.fillRect(200, 300, 100, 100);
-    this.graphics.strokeRect(350, 300, 90, 50);
-    this.graphics.fillRect(350, 300, 90, 50);
-    this.graphics.strokeRect(500, 300, 100, 100);
-    this.graphics.fillRect(500, 300, 100, 100);
+    this.graphics.strokeRect(200, 400, 100, 100);
+    this.graphics.fillRect(200, 400, 100, 100);
+    this.graphics.strokeRect(350, 400, 90, 50);
+    this.graphics.fillRect(350, 400, 90, 50);
+    this.graphics.strokeRect(500, 400, 100, 100);
+    this.graphics.fillRect(500, 400, 100, 100);
 
     // basic container to hold all menus
     this.menus = this.add.container();
 
-    this.heroesMenu = new HeroesMenu(502, 300, this);
-    this.actionsMenu = new ActionsMenu(352, 300, this);
-    this.enemiesMenu = new EnemiesMenu(202, 300, this);
+    this.heroesMenu = new HeroesMenu(502, 400, this);
+    this.actionsMenu = new ActionsMenu(352, 400, this);
+    this.enemiesMenu = new EnemiesMenu(202, 400, this);
 
     // the currently selected menu
     this.currentMenu = this.actionsMenu;
@@ -502,14 +501,11 @@ let Message = new Phaser.Class({
     const graphics = this.scene.add.graphics();
     this.add(graphics);
     graphics.lineStyle(1, 0xffffff, 0.8);
-    graphics.fillStyle(0x031f4c, 0.3);
-    graphics.strokeRect(158, 29, 190, 50);
-    graphics.fillRect(158, 29, 190, 50);
     this.text = new Phaser.GameObjects.Text(scene, 0, 0, '', {
       color: '#ffffff',
       align: 'center',
       fontSize: 15,
-      wordWrap: { width: 180, useAdvancedWrap: true },
+      wordWrap: { width: 200, useAdvancedWrap: true },
     });
     this.add(this.text);
     this.text.setOrigin(-1);
@@ -532,6 +528,4 @@ let Message = new Phaser.Class({
   },
 });
 
-export {
-  BattleScene, UIScene, score, scoreUpdate,
-};
+export { BattleScene, UIScene, score };

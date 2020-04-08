@@ -4,9 +4,11 @@
 /* eslint-disable class-methods-use-this */
 
 import 'phaser';
-import { score, scoreUpdate } from './Battle';
+import { score } from './Battle';
+import { scoreTextUpdate, levelUpdate } from './helper';
 
 let scoreText;
+let levelText;
 class WorldScene extends Phaser.Scene {
   constructor() {
     super('WorldScene');
@@ -26,7 +28,13 @@ class WorldScene extends Phaser.Scene {
       fontSize: '32px',
       fill: '#000',
     });
-    scoreUpdate(scoreText);
+
+    levelText = this.add.text(16, 50, 'Level :1', {
+      fontSize: '32px',
+      fill: '#000',
+    });
+    scoreTextUpdate(scoreText);
+    levelUpdate(levelText);
 
     this.anims.create({
       key: 'left',
