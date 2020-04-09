@@ -1,4 +1,4 @@
-import { score } from './Battle'
+import { score } from './Battle';
 
 /* eslint-disable no-undef */
 function damge(name) {
@@ -15,7 +15,6 @@ function damge(name) {
 
 const scoreTextUpdate = (el) => {
   setInterval(() => {
-    console.log(score);
     el.setText(`Score: ${score}`);
   }, 500);
 };
@@ -48,7 +47,6 @@ function enemySelect(currentScore) {
 }
 
 const scoreUpdate = (Score) => {
-  console.log(Score);
   if (Score <= 50 && Score >= 0) {
     return 35;
   } if (Score <= 200 && Score >= 50) {

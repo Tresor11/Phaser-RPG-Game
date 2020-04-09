@@ -1,49 +1,66 @@
 import 'phaser';
 import config from '../Config/config';
+import Button from '../Objects/Button';
 
 export default class CreditsScene extends Phaser.Scene {
-  constructor () {
+  constructor() {
     super('Credits');
   }
 
-  create () {
-    this.creditsText = this.add.text(0, 0, 'Credits', { fontSize: '32px', fill: '#fff' });
-    this.madeByText = this.add.text(0, 0, 'Created By: Placeholder', { fontSize: '26px', fill: '#fff' });
-    this.zone = this.add.zone(config.width/2, config.height/2, config.width, config.height);
+  create() {
+    this.menuButton = new Button(this, 400, 500, 'blueButton1', 'blueButton2', 'Menu', 'Title');
+    this.creditsText = this.add.text(0, 0, 'Credits', {
+      fontSize: '32px',
+      fill: '#fff',
+    });
+    this.madeByText = this.add.text(
+      0,
+      0,
+      'Forest Clash created by Tresor Bireke',
+      { fontSize: '26px', fill: '#fff' },
+    );
+    this.explain1 = this.add.text(
+      0,
+      0,
+      'This a game was created as a final project ',
+      { fontSize: '26px', fill: '#fff' },
+    );
+    this.explain2 = this.add.text(
+      0,
+      0,
+      'For the microverse javaScript Course',
+      { fontSize: '26px', fill: '#fff' },
+    );
+    this.inspiration = this.add.text(0, 0, 'inspiration: GameDev Academy', {
+      fontSize: '26px',
+      fill: '#fff',
+    });
+    this.assets = this.add.text(0, 0, 'Asset: OpenGameArt', {
+      fontSize: '26px',
+      fill: '#fff',
+    });
+    this.zone = this.add.zone(
+      config.width / 2,
+      config.height / 2,
+      config.width,
+      config.height,
+    );
 
-    Phaser.Display.Align.In.Center(
+    [
       this.creditsText,
-      this.zone
-    );
-
-    Phaser.Display.Align.In.Center(
       this.madeByText,
-      this.zone
-    );
-
-    this.madeByText.setY(1000);
-
-    this.creditsTween = this.tweens.add({
-      targets: this.creditsText,
-      y: -100,
-      ease: 'Power1',
-      duration: 3000,
-      delay: 1000,
-      onComplete: function () {
-        this.destroy;
-      }
+      this.inspiration,
+      this.assets,
+      this.explain1,
+      this.explain2,
+    ].forEach((el) => {
+      Phaser.Display.Align.In.Center(el, this.zone);
     });
 
-    this.madeByTween = this.tweens.add({
-      targets: this.madeByText,
-      y: -300,
-      ease: 'Power1',
-      duration: 8000,
-      delay: 1000,
-      onComplete: function () {
-        this.madeByTween.destroy;
-        this.scene.start('Title');
-      }.bind(this)
-    });
+    this.madeByText.setY(5);
+    this.explain1.setY(50);
+    this.explain2.setY(100);
+    this.creditsText.setY(150);
+    this.inspiration.setY(200);
   }
-};
+}

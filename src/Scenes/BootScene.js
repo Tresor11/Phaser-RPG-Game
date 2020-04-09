@@ -1,15 +1,16 @@
+/* eslint-disable no-undef */
 import 'phaser';
 
 export default class BootScene extends Phaser.Scene {
-  constructor () {
+  constructor() {
     super('Boot');
   }
 
-  preload () {
-    this.load.image('logo', 'assets/dragonblue.png');
+  preload() {
+    this.load.image('master', 'assets/mater.png');
   }
 
-  create () {
+  create() {
     this.scene.start('Preloader');
   }
-};
+}

@@ -4,8 +4,10 @@
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-undef */
 /* eslint-disable no-plusplus */
+import 'phaser';
+
 import {
-  damge, scoreUpdate, powerAssign, enemySelect,
+  scoreUpdate, powerAssign, enemySelect,
 } from './helper';
 
 const BattleScene = new Phaser.Class({
@@ -164,8 +166,7 @@ const BattleScene = new Phaser.Class({
     // sleep the UI
     if (param) {
       this.scene.sleep('UIScene');
-      location.reload(true);
-      this.scene.switch('Credits');
+      this.scene.switch('GameOver');
     } else {
       this.scene.sleep('UIScene');
       // return to WorldScene and sleep current BattleScene
