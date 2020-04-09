@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { score } from './Battle';
 
 /* eslint-disable no-undef */

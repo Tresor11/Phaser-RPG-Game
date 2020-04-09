@@ -1,3 +1,5 @@
+/* eslint-disable no-undef */
+/* eslint-disable radix */
 /* eslint-disable no-plusplus */
 import 'phaser';
 

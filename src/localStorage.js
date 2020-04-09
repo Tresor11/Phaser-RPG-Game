@@ -9,7 +9,7 @@ function getCurrentPlayer() {
   return JSON.parse(currentP);
 }
 
-function currentScore(params=0) {
+function currentScore(params = 0) {
   const currentP = JSON.stringify(params);
   window.localStorage.setItem('currentS', currentP);
   return (currentP);
@@ -20,4 +20,6 @@ function getCurrentScore() {
   return JSON.parse(currentP);
 }
 
-export { currentPlayer,getCurrentPlayer,currentScore,getCurrentScore};
+export {
+  currentPlayer, getCurrentPlayer, currentScore, getCurrentScore,
+};

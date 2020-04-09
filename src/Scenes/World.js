@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 /* eslint-disable no-unused-vars */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-undef */
@@ -158,4 +159,5 @@ class WorldScene extends Phaser.Scene {
   }
 }
 
+// eslint-disable-next-line import/prefer-default-export
 export { WorldScene };
