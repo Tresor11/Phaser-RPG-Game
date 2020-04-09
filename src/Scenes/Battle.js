@@ -48,32 +48,32 @@ const BattleScene = new Phaser.Class({
     );
     this.add.existing(mage);
 
-    const dragonblue = new Enemy(
+    const simpay = new Enemy(
       this,
       250,
       150,
       'bandit',
-      Phaser.Math.RND.between(0, 2),
+      null,
       'drangon',
       200,
     );
-    this.add.existing(dragonblue);
+    this.add.existing(simpay);
 
-    const dragonOrange = new Enemy(
+    const hokage = new Enemy(
       this,
       250,
       300,
       'bandit',
-      Phaser.Math.RND.between(0, 2),
+      null,
       'bandit',
       200,
     );
-    this.add.existing(dragonOrange);
+    this.add.existing(hokage);
 
 
     this.heroes = [warrior, mage];
 
-    this.enemies = [dragonblue, dragonOrange];
+    this.enemies = [simpay, hokage];
 
     this.units = this.heroes.concat(this.enemies);
 

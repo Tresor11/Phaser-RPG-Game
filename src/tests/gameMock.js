@@ -1,15 +1,8 @@
+/* eslint-disable no-undef */
 import 'phaser';
-import liveUpdate from './dom';
-import config from './Config/config';
-import { WorldScene } from './Scenes/World';
-import { BattleScene, UIScene } from './Scenes/Battle';
-import BootScene from './Scenes/BootScene';
-import PreloaderScene from './Scenes/PreloaderScene';
-import TitleScene from './Scenes/TitleScene';
-import OptionsScene from './Scenes/OptionsScene';
-import CreditsScene from './Scenes/CreditsScene';
-import Model from './Objects/Model';
-import GameOver from './Scenes/GameOver';
+import { WorldScene } from '../Scenes/World';
+import { BattleScene, UIScene } from '../Scenes/Battle';
+import CreditsScene from '../Scenes/CreditsScene';
 
 function engine() {
   const config = {
@@ -29,7 +22,14 @@ function engine() {
       },
     },
     scene: [
-      liveUpdate,
+      WorldScene,
+      BattleScene,
+      CreditsScene,
+      UIScene,
     ],
   };
+  const game = new Phaser.Game(config);
+  return game;
 }
+
+export default engine;
