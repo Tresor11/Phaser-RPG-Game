@@ -17,7 +17,7 @@ const BattleScene = new Phaser.Class({
     Phaser.Scene.call(this, { key: 'BattleScene' });
   },
   create() {
-    this.cameras.main.setBackgroundColor('rgba(0, 200, 0, 0.5)');
+    this.add.image(400, 300, 'fight');
     this.startBattle();
 
     this.sys.events.on('wake', this.startBattle, this);

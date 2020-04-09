@@ -18,7 +18,7 @@ export default class CreditsScene extends Phaser.Scene {
       0,
       0,
       'Forest Clash created by Tresor Bireke',
-      { fontSize: '26px', fill: '#fff' },
+      { fontSize: '26px', fill: '#B09B1C' },
     );
     this.explain1 = this.add.text(
       0,

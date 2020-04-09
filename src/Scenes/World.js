@@ -19,18 +19,18 @@ class WorldScene extends Phaser.Scene {
     const map = this.add.image(400, 300, 'map');
 
     const trees = this.physics.add.staticGroup();
-    for (let i = 0; i < 15; i++) {
-      const x = Phaser.Math.RND.between(0, 800);
-      const y = Phaser.Math.RND.between(0, 600);
+    for (let i = 0; i < 25; i++) {
+      const x = Phaser.Math.RND.between(150, 800);
+      const y = Phaser.Math.RND.between(10, 600);
       const id = Phaser.Math.RND.between(1, 2);
       trees.create(x, y, `tree${id}`);
     }
-    scoreText = this.add.text(16, 16, `Score : ${score}`, {
+    scoreText = this.add.text(5, 16, `Score : ${score}`, {
       fontSize: '32px',
       fill: '#000',
     });
 
-    levelText = this.add.text(16, 50, 'Level :1', {
+    levelText = this.add.text(5, 50, 'Level :1', {
       fontSize: '32px',
       fill: '#000',
     });
@@ -73,7 +73,7 @@ class WorldScene extends Phaser.Scene {
     });
 
 
-    this.player = this.physics.add.sprite(50, 100, 'player', 6);
+    this.player = this.physics.add.sprite(50, 100, 'player', 6).setScale(2);
     this.physics.add.collider(this.player, trees);
 
     this.player.setCollideWorldBounds(true);
@@ -89,7 +89,7 @@ class WorldScene extends Phaser.Scene {
     this.spawns = this.physics.add.group({
       classType: Phaser.GameObjects.Zone,
     });
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 15; i++) {
       const x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
       const y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
 
