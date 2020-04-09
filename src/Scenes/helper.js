@@ -2,17 +2,6 @@
 import { score } from './Battle';
 
 /* eslint-disable no-undef */
-function damge(name) {
-  switch (name) {
-    case 'bandit':
-      return [100, 100];
-    case 'drangon':
-      return 50;
-    default:
-      return 50;
-  }
-}
-
 
 const scoreTextUpdate = (el) => {
   setInterval(() => {
@@ -74,5 +63,5 @@ function powerAssign(el) {
 }
 
 export {
-  damge, enemySelect, scoreTextUpdate, levelUpdate, scoreUpdate, powerAssign,
+  enemySelect, scoreTextUpdate, levelUpdate, scoreUpdate, powerAssign,
 };

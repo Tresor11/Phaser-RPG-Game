@@ -59,4 +59,6 @@ async function getScoreBoard() {
   return sorting(answer.result);
 }
 
-export { submitScore, getScoreBoard, createGame };
+export {
+  submitScore, createGame, getScoreBoard,
+};

@@ -1,4 +1,5 @@
 /* eslint-disable func-names */
+import 'phaser';
 import {
   currentPlayer,
   getCurrentPlayer,
