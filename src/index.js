@@ -11,7 +11,10 @@ import OptionsScene from './Scenes/OptionsScene';
 import CreditsScene from './Scenes/CreditsScene';
 import Model from './Objects/Model';
 import GameOver from './Scenes/GameOver';
-import { submitScore, getScoreBoard, createGame } from './leader';
+import { submitScore, getScoreBoard, createGame } from './API';
+
+require('babel-core/register');
+require('babel-polyfill');
 
 class Game extends Phaser.Game {
   constructor() {

@@ -7,7 +7,7 @@ import {
   getCurrentScore,
 } from './localStorage';
 import { score } from './Scenes/Battle';
-import { submitScore, getScoreBoard } from './leader';
+import { submitScore, getScoreBoard } from './API';
 
 const dom = (function () {
   function getElement(id) {
