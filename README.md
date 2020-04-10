@@ -66,12 +66,14 @@ npm install
 
 ##### bundle the files by typing
 
-~~~npm run build
+~~~
+npm run build
 ~~~
 
 ##### run you local server by typing
 
-~~~npx http-server
+~~~
+npx http-server
 ~~~
 
 and have fun playing while you are getting a live update of your record on the leader board each time you break it
