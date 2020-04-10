@@ -50,14 +50,18 @@ Use **![wasd][wasd]** to select the character you want to use and the enemy you 
 You can play the game online clicking [here](https://cranky-lovelace-92c884.netlify.com/) or locally following these steps:
 
 ##### clone the repo by typing 
-```git clone https://github.com/Tresor11/Phaser-RPG-Game
-```
+~~~
+git clone https://github.com/Tresor11/Phaser-RPG-Game
+~~~
+
 ##### navigate to the folder by typing
-~~~cd Phaser-RPG-Game
+~~~
+cd Phaser-RPG-Game
 ~~~
 ##### get the Dependencies by typing
 
-~~~npm install
+~~~
+npm install
 ~~~
 
 ##### bundle the files by typing
