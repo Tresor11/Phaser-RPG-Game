@@ -54,7 +54,7 @@ function powerAssign(el) {
     case 'wizarus3':
       return [100, 110];
     case 'ghostus':
-      return [150, 120];
+      return [120, 120];
     case 'master':
       return [200, 150];
     default:
