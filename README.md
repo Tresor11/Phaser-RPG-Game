@@ -120,6 +120,24 @@ this is the enemy you want to defeat he is the MVP of opponents you see him in l
 
 #### Scenes
 
+##### TItle scene
+![screenshot](assets/main.png)
+
+##### credit scene
+![screenshot](assets/credit.png)
+
+##### option scene
+![screenshot](assets/option.png)
+
+##### world scene
+![screenshot](assets/world.png)
+
+##### battle scene
+![screenshot](assets/battle.png)
+
+##### Game Over
+![screenshot](assets/over.png)
+
 ## Technologies used
 
 * JavaScript
