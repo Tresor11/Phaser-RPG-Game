@@ -9,7 +9,7 @@ import 'phaser';
 
 import {
   scoreUpdate, powerAssign, enemySelect,
-} from './helper';
+} from '../helper';
 
 const BattleScene = new Phaser.Class({
   Extends: Phaser.Scene,

@@ -6,7 +6,7 @@
 
 import 'phaser';
 import { score } from './Battle';
-import { scoreTextUpdate, levelUpdate } from './helper';
+import { scoreTextUpdate, levelUpdate } from '../helper';
 
 let scoreText;
 let levelText;
@@ -19,8 +19,8 @@ class WorldScene extends Phaser.Scene {
     const map = this.add.image(400, 300, 'map');
 
     const trees = this.physics.add.staticGroup();
-    for (let i = 0; i < 25; i++) {
-      const x = Phaser.Math.RND.between(150, 800);
+    for (let i = 0; i < 15; i++) {
+      const x = Phaser.Math.RND.between(80, 800);
       const y = Phaser.Math.RND.between(10, 600);
       const id = Phaser.Math.RND.between(1, 2);
       trees.create(x, y, `tree${id}`);
@@ -89,7 +89,7 @@ class WorldScene extends Phaser.Scene {
     this.spawns = this.physics.add.group({
       classType: Phaser.GameObjects.Zone,
     });
-    for (let i = 0; i < 15; i++) {
+    for (let i = 0; i < 20; i++) {
       const x = Phaser.Math.RND.between(0, this.physics.world.bounds.width);
       const y = Phaser.Math.RND.between(0, this.physics.world.bounds.height);
 

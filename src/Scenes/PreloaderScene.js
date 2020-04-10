@@ -93,6 +93,8 @@ export default class PreloaderScene extends Phaser.Scene {
     this.load.image('tree1', 'assets/map/tree2.png');
     this.load.image('axe', 'assets/Axes.png');
     this.load.image('fight', 'assets/fight.jpg');
+    this.load.image('space', 'assets/space-key.png');
+    this.load.image('arrow', 'assets/arrow.jpg');
 
     this.load.image('map', 'assets/map/fancy-court.png.png');
 

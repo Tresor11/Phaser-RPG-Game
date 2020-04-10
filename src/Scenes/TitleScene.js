@@ -12,6 +12,32 @@ export default class TitleScene extends Phaser.Scene {
   create() {
     this.add.image(400, 300, 'fight');
     this.add.image(400, 100, 'axe');
+    this.add.image(50, 500, 'arrow');
+    this.add.image(50, 550, 'space');
+    this.add.text(
+      100,
+      480,
+      'Move and select',
+      { fontSize: '26px', fill: '#B09B1C' },
+    );
+    this.add.text(
+      100,
+      530,
+      'cofirm and attack ',
+      { fontSize: '26px', fill: '#B09B1C' },
+    );
+    this.add.text(
+      450,
+      480,
+      'Enemies are not visible 👻',
+      { fontSize: '20px', fill: '#B09B1C' },
+    );
+    this.add.text(
+      450,
+      530,
+      'Use the force to find them🙏',
+      { fontSize: '20px', fill: '#B09B1C' },
+    );
     this.gameButton = new Button(
       this,
       config.width / 2,
