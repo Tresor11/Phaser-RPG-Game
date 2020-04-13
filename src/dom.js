@@ -9,23 +9,21 @@ import {
 import { score } from './Scenes/Battle';
 import { submitScore, getScoreBoard } from './API';
 
-const dom = (function () {
-  function getElement(id) {
-    return document.getElementById(id);
-  }
+const dom = (() => {
+  const getElement = (id) => document.getElementById(id);
 
-  function getName(id) {
+  const getName = (id) => {
     const name = getElement(id).value;
     return name;
-  }
+  };
 
   return {
     getElement,
     getName,
   };
-}());
+})();
 
-async function boardList() {
+const boardList = async () => {
   let list = `<h1 class="text-c">Leader Board</h1>
   <h4><span>Place</span><span>Score</span><span>Name</span></h4>`;
   const leaderBoard = await getScoreBoard();
@@ -35,12 +33,12 @@ async function boardList() {
     }</span><span>${element[1]}</span></h4>`;
   });
   return list;
-}
+};
 
-async function render() {
+const render = async () => {
   const data = await boardList();
   dom.getElement('learder').innerHTML = data;
-}
+};
 
 render();
 
