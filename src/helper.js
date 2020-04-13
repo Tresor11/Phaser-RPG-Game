@@ -9,6 +9,10 @@ const scoreTextUpdate = (el) => {
   }, 500);
 };
 
+const hpUpdate = (el) => {
+  setInterval(() => el, 500);
+};
+
 const levelUpdate = (el) => {
   setInterval(() => {
     let level;
@@ -63,5 +67,5 @@ const powerAssign = (el) => {
 };
 
 export {
-  enemySelect, scoreTextUpdate, levelUpdate, scoreUpdate, powerAssign,
+  enemySelect, scoreTextUpdate, levelUpdate, scoreUpdate, powerAssign, hpUpdate,
 };

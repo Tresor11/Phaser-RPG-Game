@@ -1,6 +1,6 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-undef */
 import 'phaser';
-import liveUpdate from './dom';
 import config from './Config/config';
 import { WorldScene } from './Scenes/World';
 import { BattleScene, UIScene } from './Scenes/Battle';
@@ -11,7 +11,6 @@ import OptionsScene from './Scenes/OptionsScene';
 import CreditsScene from './Scenes/CreditsScene';
 import Model from './Objects/Model';
 import GameOver from './Scenes/GameOver';
-import { submitScore, getScoreBoard, createGame } from './API';
 
 require('babel-core/register');
 require('babel-polyfill');
@@ -35,4 +34,3 @@ class Game extends Phaser.Game {
 }
 
 window.game = new Game();
-liveUpdate();

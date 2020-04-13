@@ -1,12 +1,11 @@
-/* eslint-disable import/no-cycle */
-/* eslint-disable no-multi-assign */
 /* eslint-disable prefer-destructuring */
-/* eslint-disable no-param-reassign */
+/* eslint-disable no-plusplus */
 /* eslint-disable no-use-before-define */
 /* eslint-disable no-undef */
-/* eslint-disable no-plusplus */
+/* eslint-disable import/no-cycle */
 import 'phaser';
-
+import HealthBar from '../Objects/health';
+import liveUpdate from '../dom';
 import {
   scoreUpdate, powerAssign, enemySelect,
 } from '../helper';
@@ -17,9 +16,9 @@ const BattleScene = new Phaser.Class({
     Phaser.Scene.call(this, { key: 'BattleScene' });
   },
   create() {
+    // bar.value = 20;
     this.add.image(400, 300, 'fight');
     this.startBattle();
-
     this.sys.events.on('wake', this.startBattle, this);
   },
   startBattle() {
@@ -88,6 +87,7 @@ const BattleScene = new Phaser.Class({
       return;
     }
     if (this.checkEndBattle() === 'GameOver') {
+      liveUpdate();
       this.endBattle(true);
       return;
     }
@@ -108,7 +108,6 @@ const BattleScene = new Phaser.Class({
       } while (!this.heroes[r].living);
 
       this.units[this.index].attack(this.heroes[r]);
-
       this.time.addEvent({
         delay: 3000,
         callback: this.nextTurn,
@@ -131,6 +130,7 @@ const BattleScene = new Phaser.Class({
     }
 
     if (victory) {
+      life = 350;
       return 'Vitory';
     }
     if (gameOver) {
@@ -169,13 +169,16 @@ const BattleScene = new Phaser.Class({
 });
 // eslint-disable-next-line import/no-mutable-exports
 let score = 0;
-
+let life = 350;
+// eslint-disable-next-line no-unused-vars
+let bar;
 const Unit = new Phaser.Class({
   Extends: Phaser.GameObjects.Sprite,
 
   initialize: function Unit(scene, x, y, texture, frame, type, hp, damage) {
     Phaser.GameObjects.Sprite.call(this, scene, x, y, texture, frame);
     this.type = type;
+    // eslint-disable-next-line no-multi-assign
     this.maxHp = this.hp = hp;
     this.damage = damage;
     this.living = true;
@@ -189,6 +192,9 @@ const Unit = new Phaser.Class({
   attack(target) {
     if (target.living) {
       target.takeDamage(this.damage);
+      if (target instanceof PlayerCharacter) {
+        life -= this.damage;
+      }
       this.scene.events.emit(
         'Message',
         `${this.type} attacks ${target.type} for ${this.damage} damage`,
@@ -385,6 +391,9 @@ const UIScene = new Phaser.Class({
   },
 
   create() {
+    setInterval(() => {
+      bar = new HealthBar(this, 10, 10, life);
+    }, 500);
     this.graphics = this.add.graphics();
     this.graphics.lineStyle(1, 0xffffff);
     this.graphics.fillStyle(0x031f4c, 1);
