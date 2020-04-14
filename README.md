@@ -3,7 +3,7 @@
 
 # FOREST-CLASH ![screenshot](assets/Axes.png)
 
-This is Microverse's final project for the Javascript  course.
+This is the Microverse's final project for the Javascript  course.
 
 In this project i implemented a RPG game using [Phaser 3](http://phaser.io/tutorials), an open-source framework for Canvas and WebGL powered browser games.
 
@@ -40,11 +40,11 @@ progress you get stronger enemies and higher score.
 ###### 0- 50 level 1
 ###### 50- 200 level 2
 ###### 200- ++ level 3
-on the left, of the screen, you can see the leader board and each time you break your record it will be automatically be updated on the leader board
+on the left, of the screen, you can see the leader board and when the game end if you broke your record, it will be automatically updated on the leader board
 
 ### How to play
 As explained in the previous section this is a turn basd game you will have two turns before the enemies get their own.
-Use **![wasd][wasd]** to select the character you want to use and the enemy you want to attack, and press ![space][space] to attack the selected enemy.
+Use ![screenshot](assets/arrow.jpg) to select the character you want to use and the enemy you want to attack, and press ![screenshot](assets/space-key.png) to attack the selected enemy.
 
 
 You can play the game online clicking [here](https://cranky-lovelace-92c884.netlify.com/) or locally following these steps:
@@ -64,16 +64,10 @@ cd Phaser-RPG-Game
 npm install
 ~~~
 
-##### bundle the files by typing
+##### bundle the files and start the server by typing
 
 ~~~
-npm run build
-~~~
-
-##### run you local server by typing
-
-~~~
-npx http-server
+npm run start
 ~~~
 
 and have fun playing while you are getting a live update of your record on the leader board each time you break it
@@ -81,13 +75,14 @@ and have fun playing while you are getting a live update of your record on the l
 
 ### Design
 
-Each time you enter a battle you will be taken to an other screen where you meet the enemies, if you win the battle you will be taken back to the main screen
+The Game wills start with your first character the prospector you will use him to find the hidden enemies when you find them you will be taken to the other screen which is the battle screen.
+when you  are in the battle screen you will see your two heroes characters appear on the right and the enemies on the left of the screen, use the arrow keys on your keyboard to select your hero and press space to attack after you've attacked the enemies will automatically attack you, you can keep track of your remaining hp by looking at the health bar on the top left of your screen.if you won the battle you will be taken back to the main screen so that you can look for more enemies if you lost you will be taken to the game over screen 
 
 
 #### players-characters
 
 ##### Prospector
-use him to seack for enemies in the forest
+use him to seek enemies in the forest
 
 ##### Ninja ![screenshot](assets/ninja.png)
 he is your most important asset for making damage to the enemies he has **150 damage*** and **80 Hp**
