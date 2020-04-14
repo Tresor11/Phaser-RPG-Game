@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable func-names */
 import 'phaser';
 import {
@@ -54,7 +55,12 @@ const hide = () => {
   from.style.display = 'none';
 };
 submit.addEventListener('click', hide);
-
+window.addEventListener('keypress', (ev) => {
+  if (ev.keyCode === 13 && !getCurrentPlayer()) {
+    hide();
+    ev.preventDefault();
+  }
+});
 const liveUpdate = () => {
   if (score > getCurrentScore()) {
     currentScore(score);
