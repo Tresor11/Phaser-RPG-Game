@@ -156,8 +156,8 @@ https://www.loom.com/share/d4fc5b69fb4f45e9961cb5a3b745e7ae
 
 👤 **Tresor**
 
-- Github: [@ampaire](https://github.com/Tresor11)
-- Twitter: [@AmpaPhem](https://twitter.com/Tbireke)
+- Github: [@Tresor11](https://github.com/Tresor11)
+- Twitter: [@Tbireke](https://twitter.com/Tbireke)
 
 ## 🤝 Contributing
 
