@@ -147,11 +147,6 @@ this is the enemy you want to defeat he is the MVP of opponents you see him in l
 * [Leaderboard API service](https://www.notion.so/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3) for the leaderboard
 
 
-## Video presentation
-
-
-https://www.loom.com/share/d4fc5b69fb4f45e9961cb5a3b745e7ae
-
 ## contact
 
 👤 **Tresor**
