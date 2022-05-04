@@ -23,7 +23,7 @@ export default class TitleScene extends Phaser.Scene {
     this.add.text(
       100,
       530,
-      'cofirm and attack ',
+      'Confirm and attack ',
       { fontSize: '26px', fill: '#B09B1C' },
     );
     this.add.text(
@@ -35,7 +35,7 @@ export default class TitleScene extends Phaser.Scene {
     this.add.text(
       450,
       530,
-      'Use the force to find them🙏',
+      'Use the force to find them 🙏',
       { fontSize: '20px', fill: '#B09B1C' },
     );
     this.gameButton = new Button(
