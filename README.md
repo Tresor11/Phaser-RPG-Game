@@ -5,7 +5,7 @@
 
 This is the Microverse's final project for the Javascript  course.
 
-In this project i implemented a RPG game using [Phaser 3](http://phaser.io/tutorials), an open-source framework for Canvas and WebGL powered browser games.
+In this project I implemented an RPG game using [Phaser 3](http://phaser.io/tutorials), an open-source framework for Canvas and WebGL powered browser games.
 
 
 ## Table of Contents
@@ -35,12 +35,12 @@ Repository: https://github.com/Tresor11/Phaser-RPG-Game
 
 ## The game
 
-this is a turn-based game where you will have three characters, the game start with the first character (prospector) , you will be using him to find the enemies **spolier alert!!! they are hiding so you can't see them. move around and check every corner** when you find the enemies you will have your two other characters **Herus** and **ninja** to help you fighting the enemies. select the character you want to use with **keyboard arrows** and attack the enemy with **space**. the game has three levels and as you
+this is a turn-based game where you will have three characters, the game start with the first character (prospector) , and you will be using him to find the enemies **spolier alert!!! they are hiding so you can't see them. move around and check every corner** when you find the enemies you will have your two other characters **Herus** and **ninja** to help you fight the enemies. select the character you want to use with **keyboard arrows** and attack the enemy with **space**. the game has three levels and as you
 progress you get stronger enemies and higher score.
 ###### 0- 50 level 1
 ###### 50- 200 level 2
 ###### 200- ++ level 3
-on the left, of the screen, you can see the leader board and when the game end if you broke your record, it will be automatically updated on the leader board
+on the left, of the screen, you can see the leader board and when the game ends if you break your record, it will be automatically updated on the leaderboard
 
 ### How to play
 As explained in the previous section this is a turn basd game you will have two turns before the enemies get their own.
