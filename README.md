@@ -141,7 +141,6 @@ this is the enemy you want to defeat he is the MVP of opponents you see him in l
 * Eslint
 * Babel
 * Jest in the tests
-* Github
 * [Netlify](https://app.netlify.com/) for the deployment
 * [Leaderboard API service](https://www.notion.so/Leaderboard-API-service-24c0c3c116974ac49488d4eb0267ade3) for the leaderboard
 
