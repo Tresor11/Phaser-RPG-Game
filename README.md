@@ -34,7 +34,7 @@ Repository: https://github.com/Tresor11/Phaser-RPG-Game
 
 ## The game
 
-this is a turn-based game where you will have three characters, the game start with the first character (prospector) , and you will be using him to find the enemies **spolier alert!!! they are hiding so you can't see them. move around and check every corner** when you find the enemies you will have your two other characters **Herus** and **ninja** to help you fight the enemies. select the character you want to use with **keyboard arrows** and attack the enemy with **space**. the game has three levels and as you
+This is a turn-based game where you will have three characters, the game start with the first character (prospector) , and you will be using him to find the enemies **spolier alert!!! they are hiding so you can't see them. move around and check every corner** when you find the enemies you will have your two other characters **Herus** and **ninja** to help you fight the enemies. select the character you want to use with **keyboard arrows** and attack the enemy with **space**. the game has three levels and as you
 progress you get stronger enemies and higher score.
 ###### 0- 50 level 1
 ###### 50- 200 level 2
