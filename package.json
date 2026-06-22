@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/Tresor11/Phaser-RGP-Game#readme",
   "devDependencies": {
-    "@babel/core": "^7.9.0",
+    "@babel/core": "^7.29.6",
     "@babel/plugin-transform-runtime": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
     "@types/babel-core": "^6.25.6",
